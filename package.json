@@ -4,12 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "test": "mocha \"./{,!(node_modules)/**/}*.test.js\"",
+    "test": "set NODE_ENV=test&& mocha \"./{,!(node_modules|client)/**/}*.test.js\"",
+    "test:watch": "onchange \"./**/*.js\" -i -k -- yarn test",
     "start": "nodemon server.js",
     "test:department": "mocha models/test/department.model.test.js",
-    "test:employee": "mocha models/test/employee.model.test.js",
-    "test:yarn": "mocha --watch \"./**/*.test.js\"",
-    "test:watch": "onchange \"./**/*.js\" -i -k -- yarn test"
+    "test:employee": "mocha models/test/employee.model.test.js"
   },
   "dependencies": {
     "chai": "4.2.0",

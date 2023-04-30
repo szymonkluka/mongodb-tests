@@ -6,8 +6,8 @@ describe('Department', () => {
     before(async () => {
         try {
             await mongoose.connect('mongodb://localhost:27017/companyDBtest', { useNewUrlParser: true, useUnifiedTopology: true });
-            const companyDepartment = new Department({ name: 'Company' });
-            await companyDepartment.save();
+            const salesDepartment = new Department({ name: 'Company' });
+            await salesDepartment.save();
         } catch (err) {
             console.error(err);
         }
